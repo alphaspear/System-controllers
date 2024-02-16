@@ -1,0 +1,14 @@
+[Unit]
+Description=service executer
+After=network.target
+
+[Service]
+User=iabhilashjoshi
+Group=iabhilashjoshi
+WorkingDirectory=/home/iabhilashjoshi/System-controllers
+ExecStart=/usr/bin/python3 /home/iabhilashjoshi/System-controllers/scheduled-task.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
