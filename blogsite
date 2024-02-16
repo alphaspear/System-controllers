@@ -1,0 +1,24 @@
+server {
+    listen 81;
+    server_name blog.iabhilashjoshi.xyz;
+
+    # Define the document root where your HTML files are located
+    root /home/iabhilashjoshi/My-blog/blog_frontend;
+
+    # Specify default index file (e.g., index.html)
+    index index.html;
+
+    # Configure error pages
+    error_page 404 /404.html;
+    location = /404.html {
+        root /home/iabhilashjoshi/My-blog/blog_frontend;
+    }
+
+    # Additional configuration can be added here
+
+    # Define location for static files
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
